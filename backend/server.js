@@ -11,11 +11,13 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: "https://ai-schoalar.onrender.com"
+}));
 app.use(express.json());
 
 // Database connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://221fa04334_db_user:FCMEsOTPjMdsGEgw@cluster0.udl9shp.mongodb.net/?appName=Cluster0')
+mongoose.connect(process.env.MONGODB_URI)
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.log(err));
 

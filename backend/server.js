@@ -13,7 +13,8 @@ const app = express();
 // Middleware
 const allowedOrigins = [
   'http://localhost:5173', // Local frontend
-  'https://smart-scholar-frontend.onrender.com' // Deployed frontend
+  'https://smart-scholar-frontend.onrender.com', // Deployed frontend
+  'https://ai-schoalar.onrender.com' // Previous frontend URL
 ];
 
 app.use(cors({

@@ -1,10 +1,10 @@
 import { GoogleGenAI, GenerateContentResponse, Type } from "@google/genai";
 import { Scholarship } from '../types';
 
-const API_KEY = process.env.API_KEY;
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY as string;
 
 if (!API_KEY) {
-  console.warn("API_KEY environment variable not set. Using a mock service.");
+  console.warn("VITE_GEMINI_API_KEY environment variable not set. Using a mock service.");
 }
 
 const ai = API_KEY ? new GoogleGenAI({ apiKey: API_KEY }) : null;

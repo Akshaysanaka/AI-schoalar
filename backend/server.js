@@ -11,8 +11,19 @@ dotenv.config();
 const app = express();
 
 // Middleware
+const allowedOrigins = [
+  'http://localhost:5173', // Local frontend
+  'https://smart-scholar-frontend.onrender.com' // Deployed frontend
+];
+
 app.use(cors({
-  origin: "https://ai-schoalar.onrender.com"
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
 }));
 app.use(express.json());
 

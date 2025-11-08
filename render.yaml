@@ -21,7 +21,7 @@ services:
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        value: https://smart-scholar-backend.onrender.com
+        value: https://ai-schoalar.onrender.com
     source:
       repo: https://github.com/Akshaysanaka/AI-schoalar.git
       branch: main

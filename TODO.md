@@ -17,6 +17,10 @@
 
 ## Testing and Integration
 - [x] Set up MongoDB (local or cloud)
-- [ ] Test authentication flow
-- [ ] Test API endpoints
-- [ ] Run full stack integration tests
+- [ ] Install testing dependencies (Jest, Supertest for backend API tests; Cypress for integration tests)
+- [ ] Write unit/integration tests for authentication (signup, login, logout, protected routes)
+- [ ] Write tests for scholarships API endpoints (CRUD operations)
+- [ ] Write tests for applications API endpoints (CRUD operations)
+- [ ] Run backend API tests
+- [ ] Set up and run full stack integration tests with Cypress
+- [ ] Verify full stack integration and mark tasks complete

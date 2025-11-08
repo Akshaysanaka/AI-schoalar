@@ -3,12 +3,10 @@ services:
     name: smart-scholar-backend
     runtime: node
     buildCommand: npm install
-    startCommand: npm start
+    startCommand: npm run start
     envVars:
       - key: MONGODB_URI
-        value: mongodb+srv://221fa04334_db_user:Zsf0IpFuEAn7bzs2@cluster0.e5oh1np.mongodb.net/smartscholar?retryWrites=true&w=majority&appName=Cluster0
-      - key: JWT_SECRET
-        value: your_jwt_secret_here
+        value: mongodb+srv://221fa04334_db_user:Zsf0IpFuEAn7bzs2@cluster0.e5oh1np.mongodb.net/smart-scholar?retryWrites=true&w=majority&appName=Cluster0
       - key: PORT
         value: 5000
     source:

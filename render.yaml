@@ -3,10 +3,12 @@ services:
     name: smart-scholar-backend
     runtime: node
     buildCommand: npm install
-    startCommand: npm run start
+    startCommand: node server.js
     envVars:
       - key: MONGODB_URI
         value: mongodb+srv://221fa04334_db_user:Zsf0IpFuEAn7bzs2@cluster0.e5oh1np.mongodb.net/smart-scholar?retryWrites=true&w=majority&appName=Cluster0
+      - key: JWT_SECRET
+        value: 32fc2d9d2e708d65cfdc7183691f3c9a
       - key: PORT
         value: 5000
     source:
@@ -17,11 +19,11 @@ services:
   - type: web
     name: smart-scholar-frontend
     runtime: static
-    buildCommand: npm install ; npm run build
+    buildCommand: npm install && npm run build
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        value: https://ai-schoalar.onrender.com
+        value: https://smart-scholar-backend.onrender.com/api
     source:
       repo: https://github.com/Akshaysanaka/AI-schoalar.git
       branch: main
